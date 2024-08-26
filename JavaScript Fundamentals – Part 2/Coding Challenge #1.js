@@ -6,14 +6,54 @@
 // Otherwise, no team wins!
 // Your tasks:
 // 1. Create an arrow function 'calcAverage' to calculate the average of 3 scores
+
+function calcAverage(score1, score2, score3) {
+    return (score1 + score2 + score3) / 3;
+}
+
 // 2. Use the function to calculate the average for both teams
+
+var avgDolphins = calcAverage(44, 23, 71);
+var avgKoalas = calcAverage(65, 54, 49);
+console.log(`2. Dolphins average: ${avgDolphins}, Koalas average: ${avgKoalas}`);
+
 // 3. Create a function 'checkWinner' that takes the average score of each team
 // as parameters ('avgDolhins' and 'avgKoalas'), and then logs the winner
 // to the console, together with the victory points, according to the rule above.
 // Example: "Koalas win (30 vs. 13)"
+
+console.log('3. Checking winner...');
+function checkWinner(avgDolphins, avgKoalas) {
+    if (avgDolphins >= 2 * avgKoalas) {
+        console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+    } else if (avgKoalas >= 2 * avgDolphins) {
+        console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+    } else {
+        console.log('No team wins...');
+    }
+}
+
 // 4. Use the 'checkWinner' function to determine the winner for both Data 1 and
 // Data 2
+
+console.log('4. Data 1:');
+checkWinner(avgDolphins, avgKoalas);
+
+console.log('4. Data 2:');
+avgDolphins = calcAverage(85, 54, 41);
+avgKoalas = calcAverage(23, 34, 27);
+checkWinner(avgDolphins, avgKoalas);
+
 // 5. Ignore draws this time
+console.log('5. Ignoring draws this time...');
+if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+} else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+} else {
+    console.log('No team wins...');
+}
+
 // Test data:
 // § Data 1: Dolphins score 44, 23 and 71. Koalas score 65, 54 and 49
 // § Data 2: Dolphins score 85, 54 and 41. Koalas score 23, 34 and 27
