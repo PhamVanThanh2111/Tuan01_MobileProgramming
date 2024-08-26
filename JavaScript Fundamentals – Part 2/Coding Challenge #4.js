@@ -17,6 +17,8 @@ totals = [];
 function calcTip(bill) {
     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
 }
+console.log('3. Calculating tips and totals...', calcTip(100));
+
 
 // Bonus:
 // 4. Bonus: Write a function 'calcAverage' which takes an array called 'arr' as
@@ -31,12 +33,28 @@ function calcAverage(arr) {
     }
     return sum / arr.length;
 }
+console.log('4. Calculating average...', calcAverage([2, 3, 7]));
 
 // 4.1. First, you will need to add up all values in the array. To do the addition,
 // start by creating a variable 'sum' that starts at 0. Then loop over the
 // array using a for loop. In each iteration, add the current value to the
 // 'sum' variable. This way, by the end of the loop, you have all values
 // added together
+
+var array = [1, 2, 3, 4, 5];
+var sum = 0;
+for (let a of array) {
+    sum += a;
+}
+console.log('4.1. Sum:', sum);
+
+
 // 4.2. To calculate the average, divide the sum you calculated before by the
 // length of the array (because that's the number of elements)
+
+console.log('4.2. Average:', sum / array.length);
+
 // 4.3. Call the function with the 'totals' array
+
+var totals = [100, 200, 300, 400, 500];
+console.log('4.3. Average:', calcAverage(totals));
